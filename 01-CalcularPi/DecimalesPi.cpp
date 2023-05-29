@@ -5,11 +5,6 @@
 
 using namespace std;
 
-//Funcion que calcula los 6 primeros decimales de pi utilizando la serie de Leibniz, sin usar optimizaciones.
-//La serie de Leibniz es: pi/4 = 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...
-//La serie de Leibniz converge a pi/4, por lo que multiplicando por 4 obtenemos pi. 
-//La serie converge mas rapido cuanto mas grande es el numero de terminos que se suman. 
-//Por lo tanto, para obtener los 6 primeros decimales de pi, necesitamos sumar al menos 10^6 terminos.
 //La funcion recibe como parametro la cantidad de terminos que se suman.
 
 double pi(int n) {
