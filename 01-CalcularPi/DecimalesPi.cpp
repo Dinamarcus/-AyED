@@ -8,7 +8,7 @@ using namespace std;
 //La funcion recibe como parametro la cantidad de terminos que se suman.
 
 double pi(int n) {
-    double pi = 0;
+    long double pi = 0;
     for (int i = 0; i < n; i++) {
 
         //pow(-1, i) devuelve -1 si i es impar, y 1 si i es par.
