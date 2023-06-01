@@ -7,9 +7,9 @@ using namespace std;
 
 //La funcion recibe como parametro la cantidad de terminos que se suman.
 
-double pi(int n) {
+long double pi(int n) {
     long double pi = 0;
-    for (int i = 0; i < n; i++) {
+    for (long int i = 0; i < n; i++) {
 
         //pow(-1, i) devuelve -1 si i es impar, y 1 si i es par.
         pi += pow(-1, i) / (2 * i + 1);
@@ -23,8 +23,7 @@ double pi(int n) {
 int main() {
     //ACLARACION: Mientras mas grande sea el numero de terminos, mas preciso sera el resultado. 
     //Ej: si se suman 10^6 terminos, se obtienen 6 decimales de pi. 
-    //El parametro p de la funcion setprecision() indica la cantidad de decimales que se muestran. Debe coincidir con la cantidad 
-    //de decimales que se desean mostrar.
+    //El parametro p de la funcion setprecision() indica la cantidad de decimales que se muestran. Debe ser n°terminos+1.
 
     int n;
     int p;
