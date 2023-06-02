@@ -22,7 +22,7 @@ long double pi(int n) {
  
 int main() {
     //ACLARACION: Mientras mas grande sea el numero de terminos, mas preciso sera el resultado. 
-    //Ej: si se suman 10^6 terminos, se obtienen 6 decimales de pi. 
+    //Ej: si se suman 10^6 terminos y se asigna una presicion de 7, se obtienen 6 decimales de pi. 
     //El parametro p de la funcion setprecision() indica la cantidad de decimales que se muestran. Debe ser n°terminos+1.
 
     int n;
