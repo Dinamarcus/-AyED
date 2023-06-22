@@ -5,17 +5,15 @@
 
 using namespace std;
 
-//La funcion recibe como parametro la cantidad de terminos que se suman.
-
-long double pi(int n) {
+long double pi() {
     long double pi = 0;
-    for (long int i = 0; i < n; i++) {
-
+    for (long int i = 0; i < 1000000; i++) {
         //pow(-1, i) devuelve -1 si i es impar, y 1 si i es par.
         pi += pow(-1, i) / (2 * i + 1);
     }
 
-    //Multiplicamos por 4 para obtener pi, ya que originalmente la serie converge en pi/4 por lo que multiplicando por 4 se simplifica el denominador.
+    //Multiplicamos por 4 para obtener pi, ya que originalmente la serie converge 
+    //en pi/4 por lo que multiplicando por 4 se simplifica el denominador.
     return pi * 4;
 }
 
@@ -25,16 +23,7 @@ int main() {
     //Ej: si se suman 10^6 terminos y se asigna una presicion de 7, se obtienen 6 decimales de pi. 
     //El parametro p de la funcion setprecision() indica la cantidad de decimales que se muestran. Debe ser n°terminos+1.
 
-    int n;
-    int p;
-    
-    cout << "Ingrese la cantidad de terminos que se sumaran para calcular pi: ";
-    cin >> n;
-
-    cout << "Ingrese la cantidad de decimales que desea mostrar: ";
-    cin >> p;
-
-    cout << "Pi con " << n << " terminos es: " << setprecision(p) << pi(n) << endl;
+    cout << "Pi con " << "6" << " terminos es: " << setprecision(7) << pi() << endl;
 
     return 0;
 }
