@@ -7,7 +7,7 @@ using namespace std;
 
 long double pi() {
     long double pi = 0;
-    for (long int i = 0; i < 1000000; i++) {
+    for (long int i = 0; i < 10000000; i++) {
         //pow(-1, i) devuelve -1 si i es impar, y 1 si i es par.
         pi += pow(-1, i) / (2 * i + 1);
     }
