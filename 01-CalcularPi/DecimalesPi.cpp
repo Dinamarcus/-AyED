@@ -1,29 +1,41 @@
 #include <iostream>
-#include <stdio.h>
-#include <cmath> 
 #include <iomanip>
 
 using namespace std;
 
-long double pi() {
-    long double pi = 0;
-    for (long int i = 0; i < 10000000; i++) {
-        //pow(-1, i) devuelve -1 si i es impar, y 1 si i es par.
-        pi += pow(-1, i) / (2 * i + 1);
+//Esta funcion cicla mientras el término (termino) 
+//sea menor que 1e-6 (que vendria a ser igual a 10000000), 
+//lo que corresponde a una precisión de 6 decimales.
+double calcularPi() {
+    double pi = 0.0;
+    double termino = 1.0;
+    int denominador = 1;
+    int contador = 0;
+    
+    //alterna entre la suma y resta de terminos a 
+    //la variable pi mientras se cumpla la condicion dada
+    while (termino >= 1e-7) {
+        if (contador % 2 == 0) {
+            pi += termino;
+        } else {
+            pi -= termino;
+        }
+
+        denominador += 2;
+        termino = 1.0 / denominador;
+        contador++;
     }
 
-    //Multiplicamos por 4 para obtener pi, ya que originalmente la serie converge 
-    //en pi/4 por lo que multiplicando por 4 se simplifica el denominador.
     return pi * 4;
 }
 
- 
 int main() {
-    //ACLARACION: Mientras mas grande sea el numero de terminos, mas preciso sera el resultado. 
-    //Ej: si se suman 10^6 terminos y se asigna una presicion de 7, se obtienen 6 decimales de pi. 
-    //El parametro de la funcion setprecision() indica la cantidad de decimales que se muestran. Debe ser n°terminos+1.
-
-    cout << "Pi con " << "6" << " terminos es: " << setprecision(7) << pi() << endl;
-
+    //Utilizo setprecision y fixed para que el valor que sale por
+    //consola sea representado con exactamente la cantidad de 
+    //decimales indicados en la precision
+    
+    cout << setprecision(6) << fixed;
+    cout << "Pi: " << calcularPi() << endl;
+    
     return 0;
 }
